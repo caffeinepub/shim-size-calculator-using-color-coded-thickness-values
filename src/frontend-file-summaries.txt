@@ -1,0 +1,10 @@
+{
+  "frontend/src/lib/shimData.ts": "Defines the canonical 13-color shim specification with exact thickness values and display colors for UI rendering.",
+  "frontend/src/lib/formatMm.ts": "Provides utilities for safe thickness arithmetic using integer math (to avoid floating-point drift) and consistent mm formatting with 3 decimal places.",
+  "frontend/src/components/ShimQuantityTable.tsx": "Renders an interactive table of all shim colors with increment/decrement buttons, quantity inputs, and live subtotal calculations.",
+  "frontend/src/pages/ShimCalculatorPage.tsx": "Main calculator page with header, total thickness display card, shim selection table, reset functionality, and footer with attribution.",
+  "frontend/src/App.tsx": "Root application component that renders the ShimCalculatorPage as the primary view.",
+  "frontend/src/index.css": "Global styles with a warm, earthy OKLCH color palette (terracotta/rust primary, sand secondary) for both light and dark modes, avoiding blue/purple dominance.",
+  "frontend/tailwind.config.js": "Extended Tailwind configuration with custom font families (Inter, JetBrains Mono) and consistent design tokens matching the warm color system.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for future React Query hooks; currently empty as the calculator operates entirely client-side."
+}

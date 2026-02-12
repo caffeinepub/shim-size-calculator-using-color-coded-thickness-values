@@ -1,0 +1,53 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-12T17:34:38.547Z",
+  "summary": "The diff implements a client-side shim calculator page with a quantity table, hardcoded 13-color thickness mapping, running total in mm, and a warm (non blue/purple-dominant) theme. It also adds unrequested Internet Identity/react-query actor wiring and a stub Motoko backend actor.",
+  "missing_requirements": [],
+  "hallucinated_features": [
+    {
+      "description": "Internet Identity authentication context/provider and related identity/actor hooks (React Query + actor creation).",
+      "reason": "BuildRequest explicitly lists user accounts/login as a non-goal and does not require introducing authentication for this calculator UI.",
+      "evidence": [
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts",
+        "frontend/src/hooks/useQueries.ts"
+      ]
+    },
+    {
+      "description": "Added a Motoko backend canister stub (single actor) despite no backend work being required.",
+      "reason": "The request is frontend-only; backend work is stated as 'not required for this request'.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Footer attribution link to caffeine.ai with dynamic hostname UTM parameters.",
+      "reason": "Not requested by any requirement and unrelated to the shim calculator functionality/theme requirements.",
+      "evidence": [
+        "frontend/src/pages/ShimCalculatorPage.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.78,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/ShimQuantityTable.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/lib/formatMm.ts",
+    "frontend/src/lib/shimData.ts",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/ShimCalculatorPage.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

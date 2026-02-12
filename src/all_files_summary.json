@@ -1,0 +1,19 @@
+{
+  "backend/main.mo": "Empty Motoko actor with no methods implemented.",
+  "feature_evidence.json": "Feature evidence report mapping feature IDs to affected frontend files and components.",
+  "frontend-file-summaries.txt": "Lookup file containing brief descriptions of key frontend modules.",
+  "frontend/index.css": "Global CSS theme variables defining a color system and base styles using Tailwind layers.",
+  "frontend/index.html": "HTML entry point mounting the React app and loading main.tsx.",
+  "frontend/src/App.tsx": "Root React component rendering the ShimCalculatorPage.",
+  "frontend/src/components/ShimQuantityTable.tsx": "Interactive table for editing shim quantities and showing per-color subtotals.",
+  "frontend/src/hooks/useActor.ts": "Hook creating and managing a backend actor instance tied to Internet Identity.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Context and hooks for managing Internet Identity login, state, and persistence.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for future React Query hooks; currently unused.",
+  "frontend/src/index.css": "Warm-themed Tailwind CSS variables and global styles for light and dark modes.",
+  "frontend/src/lib/formatMm.ts": "Utility functions for formatting millimeter values and computing total or subtotal thickness.",
+  "frontend/src/lib/shimData.ts": "Hardcoded list of shim colors with their thickness values and display colors.",
+  "frontend/src/main.tsx": "Bootstraps the React app, wrapping it with react-query and Internet Identity providers before rendering App.",
+  "frontend/src/pages/ShimCalculatorPage.tsx": "Implements the shim calculator page with quantity state, total thickness calculation, reset functionality, and UI layout.",
+  "frontend/tailwind.config.js": "Configures Tailwind CSS theme, colors, fonts, plugins, and container settings for the project.",
+  "project_state.json": "Defines the project's metadata, feature list, requirements, and current state for the shim calculator app."
+}

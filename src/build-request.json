@@ -1,0 +1,88 @@
+{
+  "kind": "build_request",
+  "title": "Shim size calculator using color-coded thickness values",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a shim size calculator UI that lets users add/remove shims by selecting from the provided color list and entering a quantity for each color, then computes the total shim stack thickness.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Make me a shim size calculator by adding the colors and mm values shown"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The UI shows a list/table of shim colors with an input control to set quantity per color (min 0).",
+        "Users can increment/decrement quantities and also reset all quantities to 0.",
+        "The calculator shows the running total thickness as quantities change."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Hardcode the shim color-to-thickness mapping exactly as shown in the uploaded image and use it for all calculations: Amber=0.025mm, Purple=0.038mm, Red=0.051mm, Green=0.076mm, Tan=0.102mm, Blue=0.127mm, Matte=0.191mm, Brown=0.254mm, Black=0.318mm, Pink=0.381mm, Yellow=0.508mm, White=0.635mm, Coral=0.762mm.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "adding the colors and mm values shown"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All 13 colors from the image are present in the UI.",
+        "Each color’s mm value matches the list in this requirement.",
+        "Total thickness equals sum(quantity[color] * mm[color]) across all colors."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Display calculated results with clear units and sensible rounding: show total thickness in millimeters (mm) and also show the per-color subtotal (quantity × mm) for transparency.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Totals are displayed in mm with rounding to 3 decimal places (or better if needed to avoid visible rounding errors).",
+        "Each row shows the per-color subtotal in mm that updates when quantity changes.",
+        "A reset action restores totals and subtotals to 0.000mm."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Apply a coherent, distinctive visual theme for the calculator (colors, typography, spacing, and layout) and use it consistently across the page; avoid a blue/purple-dominant palette.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The app has a consistent visual style across header, content, and controls.",
+        "The theme is not primarily blue/purple.",
+        "The UI remains readable and accessible (sufficient contrast for text and controls)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use English for all user-facing text.",
+    "Do not edit any files under frontend/src/components/ui or other frontend immutablePaths; compose those components instead if needed.",
+    "No third-party auth providers; if auth is introduced later it must use Internet Identity (not required for this request).",
+    "Backend must remain single-actor Motoko if any backend work is later added (not required for this request)."
+  ],
+  "nonGoals": [
+    "User accounts, login, or saving presets/history across sessions.",
+    "Backend persistence of calculator state.",
+    "Integrations with external APIs or databases."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Shim size calculator app that sums shim thicknesses by selected color-coded millimeter values.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-shim-size-calculator-ui-that-lets-users-add-remove-shims-by-selecting-from-the-provided-color-list-and-entering-a-quantity-for-each-color-then-computes-the-total-shim-stack-thickness",
+      "title": "Create a shim size calculator UI that lets users add/remove shims by selecting from the provided color list and entering a quantity for each color, then computes the total shim stack thickness.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-hardcode-the-shim-color-to-thickness-mapping-exactly-as-shown-in-the-uploaded-image-and-use-it-for-all-calculations-amber-0-025mm-purple-0-038mm-red-0-051mm-green-0-076mm-tan-0-102mm-blue-0-127mm-matte-0-191mm-brown-0-254mm-black-0-318mm-pink-0-381mm-yellow-0-508mm-white-0-635mm-coral-0-762mm",
+      "title": "Hardcode the shim color-to-thickness mapping exactly as shown in the uploaded image and use it for all calculations: Amber=0.025mm, Purple=0.038mm, Red=0.051mm, Green=0.076mm, Tan=0.102mm, Blue=0.127mm, Matte=0.191mm, Brown=0.254mm, Black=0.318mm, Pink=0.381mm, Yellow=0.508mm, White=0.635mm, Coral=0.762mm.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-calculated-results-with-clear-units-and-sensible-rounding-show-total-thickness-in-millimeters-mm-and-also-show-the-per-color-subtotal-quantity-mm-for-transparency",
+      "title": "Display calculated results with clear units and sensible rounding: show total thickness in millimeters (mm) and also show the per-color subtotal (quantity × mm) for transparency.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-distinctive-visual-theme-for-the-calculator-colors-typography-spacing-and-layout-and-use-it-consistently-across-the-page-avoid-a-blue-purple-dominant-palette",
+      "title": "Apply a coherent, distinctive visual theme for the calculator (colors, typography, spacing, and layout) and use it consistently across the page; avoid a blue/purple-dominant palette.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Build a shim size calculator that adds selected shim colors and their corresponding mm values (as shown) to compute total thickness.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Shim size calculator using color-coded thickness values",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

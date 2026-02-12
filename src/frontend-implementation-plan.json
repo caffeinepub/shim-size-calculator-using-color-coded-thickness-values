@@ -1,0 +1,111 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Shim size calculator (color-coded thickness)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build an interactive shim calculator UI with per-color quantities, add/remove controls, and reset.",
+      "acceptanceCriteria": [
+        "The UI shows a list/table of shim colors with an input control to set quantity per color (min 0).",
+        "Users can increment/decrement quantities and also reset all quantities to 0.",
+        "The calculator shows the running total thickness as quantities change."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ShimCalculatorPage.tsx",
+          "operation": "create",
+          "description": "Create the main calculator page UI rendering the full color list with quantity controls (number input plus increment/decrement), a reset-all action, and a running total section. Use shadcn-ui components (e.g., Button, Input, Card/Table equivalents) to compose controls and layout; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/ShimQuantityTable.tsx",
+          "operation": "create",
+          "description": "Create a reusable table/list component for displaying shim rows (color label, mm value, quantity controls, per-row subtotal). Use shadcn-ui components to standardize interactive controls and table styling; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Wire the ShimCalculatorPage into the app as the primary rendered view (no new routes unless the project already has routing). Ensure navigation is not required to reach the calculator."
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "operation": "modify",
+          "description": "Ensure the app renders the newly created App component and retains existing providers; confirm the calculator UI is reachable on initial load."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Hardcode and use the exact 13-color shim thickness mapping from the image for all calculations.",
+      "acceptanceCriteria": [
+        "All 13 colors from the image are present in the UI.",
+        "Each color’s mm value matches the list in this requirement.",
+        "Total thickness equals sum(quantity[color] * mm[color]) across all colors."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/lib/shimData.ts",
+          "operation": "create",
+          "description": "Define the canonical shim list with exactly these mappings: Amber=0.025mm, Purple=0.038mm, Red=0.051mm, Green=0.076mm, Tan=0.102mm, Blue=0.127mm, Matte=0.191mm, Brown=0.254mm, Black=0.318mm, Pink=0.381mm, Yellow=0.508mm, White=0.635mm, Coral=0.762mm. Export a stable ordered array for UI rendering and calculations."
+        },
+        {
+          "path": "frontend/src/pages/ShimCalculatorPage.tsx",
+          "operation": "modify",
+          "description": "Import and use the shim mapping from shimData.ts as the single source of truth for rendering rows and computing totals/subtotals (no duplicated mappings)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Show totals and per-color subtotals in mm with clear units and sensible rounding.",
+      "acceptanceCriteria": [
+        "Totals are displayed in mm with rounding to 3 decimal places (or better if needed to avoid visible rounding errors).",
+        "Each row shows the per-color subtotal in mm that updates when quantity changes.",
+        "A reset action restores totals and subtotals to 0.000mm."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/lib/formatMm.ts",
+          "operation": "create",
+          "description": "Add helpers for safe thickness arithmetic and formatting (e.g., compute using integer thousandths-of-mm to avoid floating drift; format output with at least 3 decimal places and explicit 'mm' units)."
+        },
+        {
+          "path": "frontend/src/pages/ShimCalculatorPage.tsx",
+          "operation": "modify",
+          "description": "Use the formatting helpers to display total thickness and ensure the reset action restores displayed totals/subtotals to 0.000mm."
+        },
+        {
+          "path": "frontend/src/components/ShimQuantityTable.tsx",
+          "operation": "modify",
+          "description": "Display and update each row's per-color subtotal (quantity × mm) with formatted mm units; update live as quantities change. Use shadcn-ui typography/table primitives as applicable; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Apply a consistent, distinctive, accessible theme that is not blue/purple-dominant.",
+      "acceptanceCriteria": [
+        "The app has a consistent visual style across header, content, and controls.",
+        "The theme is not primarily blue/purple.",
+        "The UI remains readable and accessible (sufficient contrast for text and controls)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Create global styles and theme tokens (CSS variables / Tailwind base layer) to establish a cohesive warm/neutral palette (avoid blue/purple dominance), consistent typography, spacing, and accessible contrast across the calculator."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Adjust/extend Tailwind theme configuration as needed to support the chosen palette and consistent spacing/typography (while keeping the overall shadcn-ui token approach intact)."
+        },
+        {
+          "path": "frontend/src/pages/ShimCalculatorPage.tsx",
+          "operation": "modify",
+          "description": "Apply the theme consistently across header, content container, and controls using Tailwind classes and composed shadcn-ui components; verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

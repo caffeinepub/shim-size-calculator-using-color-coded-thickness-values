@@ -1,0 +1,85 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-shim-size-calculator-ui-that-lets-users-add-remove-shims-by-selecting-from-the-provided-color-list-and-entering-a-quantity-for-each-color-then-computes-the-total-shim-stack-thickness",
+      "featureTitle": "Create a shim size calculator UI that lets users add/remove shims by selecting from the provided color list and entering a quantity for each color, then computes the total shim stack thickness.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ShimQuantityTable.tsx",
+        "frontend/src/main.tsx",
+        "frontend/src/pages/ShimCalculatorPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-hardcode-the-shim-color-to-thickness-mapping-exactly-as-shown-in-the-uploaded-image-and-use-it-for-all-calculations-amber-0-025mm-purple-0-038mm-red-0-051mm-green-0-076mm-tan-0-102mm-blue-0-127mm-matte-0-191mm-brown-0-254mm-black-0-318mm-pink-0-381mm-yellow-0-508mm-white-0-635mm-coral-0-762mm",
+      "featureTitle": "Hardcode the shim color-to-thickness mapping exactly as shown in the uploaded image and use it for all calculations: Amber=0.025mm, Purple=0.038mm, Red=0.051mm, Green=0.076mm, Tan=0.102mm, Blue=0.127mm, Matte=0.191mm, Brown=0.254mm, Black=0.318mm, Pink=0.381mm, Yellow=0.508mm, White=0.635mm, Coral=0.762mm.",
+      "files": [
+        "frontend/src/lib/shimData.ts",
+        "frontend/src/pages/ShimCalculatorPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-display-calculated-results-with-clear-units-and-sensible-rounding-show-total-thickness-in-millimeters-mm-and-also-show-the-per-color-subtotal-quantity-mm-for-transparency",
+      "featureTitle": "Display calculated results with clear units and sensible rounding: show total thickness in millimeters (mm) and also show the per-color subtotal (quantity × mm) for transparency.",
+      "files": [
+        "frontend/src/components/ShimQuantityTable.tsx",
+        "frontend/src/lib/formatMm.ts",
+        "frontend/src/pages/ShimCalculatorPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-coherent-distinctive-visual-theme-for-the-calculator-colors-typography-spacing-and-layout-and-use-it-consistently-across-the-page-avoid-a-blue-purple-dominant-palette",
+      "featureTitle": "Apply a coherent, distinctive visual theme for the calculator (colors, typography, spacing, and layout) and use it consistently across the page; avoid a blue/purple-dominant palette.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/src/pages/ShimCalculatorPage.tsx",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

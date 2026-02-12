@@ -1,2 +1,3 @@
-# shim-size-calculator-using-color-coded-thickness-values
-Exported from Caffeine project: Shim size calculator using color-coded thickness values
+## Shim size calculator using color-coded thickness values
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`
